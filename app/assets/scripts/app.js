@@ -20,13 +20,13 @@ ticApp.config(function($stateProvider, $urlRouterProvider) {
         
     .state('home', {
         url: '/home',
-        templateUrl: 'views/partial-home.html'
+        templateUrl: 'components/home/partial-home.html'
     })
 
     // nested list with custom controller
     .state('home.list', {
         url: '/list',
-        templateUrl: 'views/partial-home-list.html',
+        templateUrl: 'shared/partial-home-list.html',
         controller: function($scope) {
             $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
         }
