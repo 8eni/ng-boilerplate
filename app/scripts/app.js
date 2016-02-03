@@ -9,6 +9,7 @@
  * Main module of the application.
  */
 // app.js
+// app.js
 var ticApp = angular.module('ticApp', ['ui.router']);
 
 ticApp.config(function($stateProvider, $urlRouterProvider) {
@@ -17,16 +18,24 @@ ticApp.config(function($stateProvider, $urlRouterProvider) {
     
     $stateProvider
         
-        // HOME STATES AND NESTED VIEWS ========================================
-        .state('home', {
-            url: '/home',
-            templateUrl: 'views/main.html'
-        })
-        
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        .state('about', {
-            url: '/about',
-            templateUrl: 'views/about.html'
-        });
+    .state('home', {
+        url: '/home',
+        templateUrl: 'views/partial-home.html'
+    })
+
+    // nested list with custom controller
+    .state('home.list', {
+        url: '/list',
+        templateUrl: 'views/partial-home-list.html',
+        controller: function($scope) {
+            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+        }
+    })
+
+    // nested list with just some random string data
+    .state('home.paragraph', {
+        url: '/paragraph',
+        template: 'I could sure use a drink right now.'
+    });
         
 });
