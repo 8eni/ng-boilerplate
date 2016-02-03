@@ -1,12 +1,16 @@
 # tic
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
 
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
 
-## Testing
 
-Running `grunt test` will run the unit tests with karma.
+
+## Shared
+
+acts as reusable components or partials of our site.
+
+## Components
+
+each component is treated as a mini Angular app.
